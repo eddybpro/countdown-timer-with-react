@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+:root {
+  --color-brand-1: hsl(0, 0%, 100%);
+  --color-brand-2: hsl(237, 18%, 59%);
+  --color-brand-3: hsl(345, 95%, 68%);
+
+  --color-site-1: hsl(234, 17%, 12%);
+  --color-site-2: hsl(235, 16%, 14%);
+  --color-site-3: hsl(236, 21%, 26%);
+
+  --font-red-hat-text: "Red Hat Text", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-red-hat-text);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  background: url("./assets/bg-stars.svg"), url("./assets/pattern-hills.svg");
+  background-position: center, bottom left -60rem;
+  background-size: cover, 300% 20rem;
+  background-repeat: no-repeat, no-repeat;
+  background-color: var(--color-site-1);
+  padding: 10rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.Title {
+  color: var(--color-brand-1);
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.CountdownBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.CountdownBox-Bg {
+  background-color: var(--color-brand-2);
+  position: relative;
+}
+
+.CountdownBox-Bg::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: -0.5rem;
+  right: -0.5rem;
+  background-color: var(--color-site-3);
+  top: 0;
+  height: 46%;
+  border-radius: 0.5rem;
+}
+
+.CountdownBox-Bg::after {
+  position: absolute;
+  content: "";
+  display: block;
+  left: -0.5rem;
+  right: -0.5rem;
+  background-color: var(--color-site-3);
+  bottom: 0;
+  height: 46%;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 8px var(--color-site-1);
+}
+
+.CountdownBox-Bg > button {
+  position: sticky;
+  display: block;
+  font-weight: bold;
+  width: 7rem;
+  padding: 0.5rem;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-brand-3);
+  outline: none;
+  z-index: 10;
+}
+
+.CountdownBox > div > p {
+  color: var(--color-brand-2);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.ResetBtn {
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: var(--color-site-3);
+  color: var(--color-brand-1);
+  margin-top: 3rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.ResetBtn:hover {
+  background-color: var(--color-brand-1);
+  color: var(--color-brand-3);
+}
+
+.SocialIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.socialIcon {
+  color: var(--color-brand-2);
+  font-size: 3.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.socialIcon:hover {
+  color: var(--color-brand-3);
+}
+
+@media screen and (min-width: 768px) {
+  .Title {
+    font-size: 5rem;
+  }
+
+  .CountdownBox {
+    gap: 4rem;
+  }
+
+  .CountdownBox-Bg > button {
+    width: 10rem;
+    font-size: 5.5rem;
+  }
+
+  .socialIcon {
+    font-size: 4.5rem;
+  }
+}
