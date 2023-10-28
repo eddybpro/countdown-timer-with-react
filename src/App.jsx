@@ -10,11 +10,9 @@ function App() {
   futureDate.setDate(currentDate.getDate() + 10);
 
   const [targetDate, setTargetDate] = useState(futureDate);
-  //const targetDate = new Date("11/7/2023");
   const handleClick = () => {
     setTargetDate(futureDate);
   };
-  console.log(targetDate);
   const calculateTimeRemaining = () => {
     const now = new Date().getTime();
     const distance = targetDate - now;
